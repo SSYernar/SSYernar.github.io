@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="resultText"></h1>
+    <br>
+    <div id="map"></div>
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script>
+      
+      let response = prompt("Вы свободны в воскресенье?").toLowerCase();
+      let text = "";
+      
+      if (response == "yes" || response == "да") {
+        text = "Буду ждать вас возле Тидота на Тимирязева в 15:00 <3";
+
+        var map;
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [43.225772, 76.910395],
+                zoom: 15
+            });
+
+            DG.marker([43.225772, 76.910395]).addTo(map).bindPopup('');
+        });
+
+
+
+      }else if(response=="no" || response == "нет"){
+        text = "bruh";
+      }else{
+        text = "так да или нет";
+      }
+      
+      document.getElementById("resultText").innerHTML = text;
+    </script>
+  </body>
+</html>
