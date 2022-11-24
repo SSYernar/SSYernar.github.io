@@ -2,7 +2,33 @@
     <head>
         <title>For Theresa</title>
         <style>
-            html, body {
+
+.heart {
+  display: inline-block;
+  margin: 0px 25px 10px;
+  position: absolute;
+  top: 325px;
+  left: 450px;
+  z-index: 5;
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0% { transform:  scale(1); }
+  50% { transform:  scale(1.5); }
+  100% { transform:  scale(1); }
+}
+
+.heart:before {
+  top: -50px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: 50px;
+}
+            /* html, body {
                 margin: 0;
                 padding: 0;
                 width: 100%;
@@ -17,6 +43,22 @@
             .content {
                 display: inline-block;
                 text-align: left;
+            } */
+            img {
+                /* position: absolute; */
+            }
+            .img1 {
+                z-index: 1;
+                /* width: 100%; */
+            }
+            .img2 {
+                z-index: 3;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 20%;
+            }
+            .content {
                 
             }
         </style>
@@ -24,7 +66,8 @@
     <body>
         <div class="container">
             <div class="content">
-            <img src="img.PNG" alt="" />
+                <img src="img2.PNG" alt="" class="img1"/>
+                <img src="2.PNG" alt="" class="img2 heart"/>
             </div>
         </div>
     </body>
